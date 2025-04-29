@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "vercel:dev":"npm run build && vercel dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

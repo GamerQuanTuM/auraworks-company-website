@@ -83,7 +83,7 @@ app.post(
   }
 );
 
-// Export all handlers and configuration
+// Export all handlers
 const handlers = createHonoHandlers(app);
 export const GET = handlers.GET;
 export const POST = handlers.POST;

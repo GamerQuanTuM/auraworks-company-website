@@ -65,17 +65,17 @@ const Banner = () => {
         className="relative z-[100] h-[85%] w-[80%] mx-auto flex items-end"
       >
         <div className="flex flex-col gap-10">
-          <div className="text-5xl font-bold text-white flex flex-col gap-10">
+          <div className="text-2xl md:text-5xl text-center md:text-left font-bold text-white flex flex-col gap-10">
             <span>외주개발의 정직함을 더하는</span>
             <span>IT 비즈니스 파트너 다글제작소</span>
           </div>
-          <div className="flex items-center gap-14">
+          <div className="flex flex-col md:flex-row items-center gap-5 md:gap-14">
             <motion.div
               whileHover="hover"
               whileTap="tap"
               variants={buttonVariants}
             >
-              <Button className="inline-flex items-center justify-center cursor-pointer transition-colors text-white border bg-[#5221c4] hover:bg-[#511bce] font-semibold px-7 py-8 rounded-lg w-60 border-none text-lg">
+              <Button className="flex items-center justify-center cursor-pointer transition-colors text-white border bg-[#5221c4] hover:bg-[#511bce] font-semibold px-7 py-8 rounded-lg w-60 border-none text-lg">
                 프로젝트 문의하기
               </Button>
             </motion.div>

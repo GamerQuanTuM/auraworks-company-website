@@ -1,7 +1,8 @@
 import React from "react";
-import Banner from "./banner";
 import Advertise from "./advertise";
 import Text from "./text";
+import Testimonial from "./testimonial";
+import Banner from "./banner";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <div className="relative">
         <Text />
       </div>
+      <Testimonial/>
     </>
   );
 };

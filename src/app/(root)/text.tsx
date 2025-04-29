@@ -45,12 +45,12 @@ const Text = () => {
   return (
     <section
       ref={containerRef}
-      className="h-[150vh] md:h-[350vh] lg:h-[400vh] relative bg-white"
+      className="h-[120vh] md:h-[400vh] relative bg-white"
     >
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-0">
-        <div className="flex flex-col gap-12 sm:gap-16 md:gap-20 w-full max-w-6xl mx-auto">
+      <div className="sticky top-0 h-screen flex py-40 md:py-0 md:items-center md:justify-center overflow-hidden px-4 sm:px-6 md:px-0">
+        <div className="flex flex-col gap-28 md:gap-20 w-full max-w-6xl mx-auto">
           {/* Top Left */}
-          <div className="flex justify-start text-xl sm:text-2xl md:text-5xl font-bold overflow-hidden">
+          <div className="flex justify-center md:justify-start text-4xl md:text-5xl font-bold overflow-hidden">
             <div className="flex flex-col gap-6 sm:gap-8">
               <motion.span
                 style={{ opacity: opacity1, y: y1, clipPath: clipPath1 }}
@@ -68,7 +68,7 @@ const Text = () => {
           </div>
 
           {/* Bottom Right */}
-          <div className="flex justify-end text-xl sm:text-2xl md:text-5xl font-bold overflow-hidden">
+          <div className="flex justify-center md:justify-end text-4xl md:text-5xl font-bold overflow-hidden">
             <div className="flex flex-col gap-6 sm:gap-8 text-right">
               <motion.span
                 style={{ opacity: opacity3, y: y3, clipPath: clipPath3 }}

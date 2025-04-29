@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
  
 const pretandard = localFont({
-  src: '../../public/Pretendard-Regular.woff2',
+  src: '../../../public/Pretendard-Regular.woff2',
 })
 
 

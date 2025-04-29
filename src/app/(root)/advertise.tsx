@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 const cardContainerVariants = {
-  hidden: { opacity: 0, y: 150 },
+  hidden: { opacity: 0, y: 50 },
   show: {
     opacity: 1,
     y: 0,
@@ -70,7 +70,7 @@ const Advertise = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ amount: 0.5, margin: "0px 0px -100px 0px" }}
+        viewport={{ amount: 0.2, margin: "0px 0px -100px 0px" }}
       >
         <motion.h1 variants={itemVariants} className="font-extrabold text-4xl">
           외주개발이
@@ -92,7 +92,7 @@ const Advertise = () => {
         variants={cardContainerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="flex md:flex-row max-w-[328px] tab:max-w-[520px] md:max-w-full mx-auto flex-col items-center justify-center gap-6 mt-16"
       >
         {/* Left Card */}

@@ -125,4 +125,20 @@
   @apply mx-auto max-w-7xl px-6;
 }
 
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%) rotate(270deg);
+}
 
+@media (max-width: 768px) {
+  /* or your preferred mobile breakpoint */
+  .arrow-container {
+    top: auto;
+    bottom: -10px;
+    right: auto;
+    left: 16px;
+    transform: translateY(0) rotate(0);
+  }
+}

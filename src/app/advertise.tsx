@@ -112,13 +112,16 @@ const Advertise = () => {
             <div className="relative md:static mob:w-full h-full justify-center text-center">
               <motion.div
                 variants={speechBubbleVariants}
-                className="flex relative flex-col z-10 top-2 tab:top-0 md:top-0 left-[44px] tab:left-10 md:left-44"
+                className="flex relative flex-col z-10 top-2 md:top-0 mx-auto md:mx-0 md:left-44"
                 style={{ width: "fit-content", textAlign: "center" }}
               >
                 <div className="bg-white text-black rounded-md p-3">
                   <p className="text-sm font-semibold text-black">
                     제가 물어보지 않으면
-                    <br />말 안하실건가요?
+                    <span className="hidden md:inline">
+                      <br />
+                    </span>
+                    말 안하실건가요?
                   </p>
                 </div>
                 <Image
@@ -168,13 +171,15 @@ const Advertise = () => {
               <p className="font-bold text-2xl">IT 개발사 보증의 고민</p>
               <p className="text-sm font-semibold mt-2">
                 "수많은 IT개발사 중에서 어떤 곳을
-                <br />
+                <span className="hidden md:inline">
+                  <br />
+                </span>
                 선택해야 할지 잘 모르겠어요."
               </p>
               <div className="relative md:static mob:w-full h-full justify-center text-center">
                 <motion.div
                   variants={speechBubbleVariants}
-                  className="flex relative flex-col z-10 top-0 md:top-5 left-8 md:left-0"
+                  className="flex relative flex-col z-10 top-0 md:top-5 mt-5 md:mt-0"
                   style={{ width: "fit-content", textAlign: "center" }}
                 >
                   <div className="bg-white text-black rounded-md p-3">
@@ -188,7 +193,8 @@ const Advertise = () => {
                     width="15"
                     height="15"
                     decoding="async"
-                    className="absolute -right-[10px] top-1/2 -translate-y-1/2 rotate-[270deg]"
+                    className="arrow-container"
+                    //absolute -bottom-[10px] left-4
                     src="https://daggle.io/svg/icon/polygon.svg"
                     style={{ color: "transparent" }}
                   />
@@ -222,7 +228,7 @@ const Advertise = () => {
               <div className="relative md:static mob:w-full h-full mt-5 justify-center text-center">
                 <motion.div
                   variants={speechBubbleVariants}
-                  className="flex relative flex-col z-10 -top-5 md:top-2 left-4 md:left-16"
+                  className="flex relative flex-col z-10 -top-5 md:top-2 mx-auto md:mx-0 md:left-16 my-5 md:my-0"
                   style={{ width: "fit-content", textAlign: "center" }}
                 >
                   <div className="bg-white text-black rounded-md p-3">
@@ -236,7 +242,7 @@ const Advertise = () => {
                     width="15"
                     height="15"
                     decoding="async"
-                    className="absolute -right-[10px] top-1/2 -translate-y-1/2 rotate-[270deg]"
+                    className="arrow-container"
                     src="https://daggle.io/svg/icon/polygon.svg"
                     style={{ color: "transparent" }}
                   />

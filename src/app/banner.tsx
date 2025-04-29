@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion, Variants } from "motion/react";
 import { FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/lib/variants";
 
 const Banner = () => {
   const [loading, setLoading] = useState(true);
@@ -69,9 +70,15 @@ const Banner = () => {
             <span>IT 비즈니스 파트너 다글제작소</span>
           </div>
           <div className="flex items-center gap-14">
-            <Button className="inline-flex items-center justify-center cursor-pointer transition-colors text-white border bg-[#5221c4] hover:bg-[#511bce] font-semibold px-7 py-8 rounded-lg w-60 border-none text-lg">
-              프로젝트 문의하기
-            </Button>
+            <motion.div
+              whileHover="hover"
+              whileTap="tap"
+              variants={buttonVariants}
+            >
+              <Button className="inline-flex items-center justify-center cursor-pointer transition-colors text-white border bg-[#5221c4] hover:bg-[#511bce] font-semibold px-7 py-8 rounded-lg w-60 border-none text-lg">
+                프로젝트 문의하기
+              </Button>
+            </motion.div>
             <div className="flex gap-3 items-center cursor-pointer">
               <h1 className="font-semi-bold text-lg">서비스 소개서</h1>
               <FileDown size={15} color="#FFF" />
@@ -82,7 +89,7 @@ const Banner = () => {
 
       {/* Loading Overlay */}
       <motion.img
-        className="absolute inset-0 z-[90] w-full h-full object-cover"
+        className="absolute inset-0 z-[501] w-full h-full object-cover"
         src="https://daggle.io/_next/image?url=%2Fpng%2Fhero-section%2Fhero-animation-bg.png&w=1920&q=100"
         initial="visible"
         animate={loading ? "visible" : "hidden"}

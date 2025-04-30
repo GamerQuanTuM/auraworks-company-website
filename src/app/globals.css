@@ -142,3 +142,17 @@
     transform: translateY(0) rotate(0);
   }
 }
+
+.mask-gradient {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.card-shadow {
+  box-shadow: 4px 0 20px #97979740;
+}

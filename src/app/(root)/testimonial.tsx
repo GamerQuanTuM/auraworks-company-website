@@ -181,21 +181,20 @@ const Testimonial = () => {
         variants={testimonialCardVariants}
         initial="hidden"
         whileInView="show"
-        className="relative mt-20 w-[90%] md:w-[60%] mx-auto overflow-hidden"
+        className="relative mt-20 w-[90%] md:w-[60%] mx-auto overflow-hidden mask-gradient"
       >
-        {/* Left fade gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-
-        {/* Right fade gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-
         <div
           className="overflow-hidden"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
           {/* First copy of items */}
-          <motion.div className="flex" animate={controls} initial={{ x: 0 }}>
+          <motion.div
+            style={{ willChange: "transform" }}
+            className="flex"
+            animate={controls}
+            initial={{ x: 0 }}
+          >
             {marqueeItems.map((testimonial, index) => (
               <TestimonialCard
                 key={`${testimonial.id}-${index}`}

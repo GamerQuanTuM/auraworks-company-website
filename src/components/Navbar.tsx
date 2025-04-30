@@ -111,7 +111,7 @@ const Navbar = () => {
         </div>
 
         <motion.div whileHover="hover" whileTap="tap" variants={buttonVariants}>
-          <Button className="hidden md:inline-flex items-center justify-center cursor-pointer transition-colors text-black border bg-white border-line font-semibold px-7 py-6 rounded-lg hover:bg-gray-100  relative">
+          <Button className="hidden md:inline-flex items-center justify-center cursor-pointer transition-colors text-black border bg-white font-semibold px-7 py-6 rounded-lg hover:bg-gray-100  relative">
             프로젝트 문의하기
           </Button>
 

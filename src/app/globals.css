@@ -125,6 +125,12 @@
   @apply mx-auto max-w-7xl px-6;
 }
 
+.background-image-class {
+  background-size: "cover";
+  background-position: "center";
+  background-repeat: "no-repeat";
+}
+
 .arrow-container {
   position: absolute;
   top: 50%;

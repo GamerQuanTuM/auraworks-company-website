@@ -22,7 +22,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="shrink-0 snap-center mx-3">
-      <div className="relative aspect-[319/391] h-[391px] rounded-[20px]">
+      <div className="relative aspect-[319/391] h-[391px] rounded-[20px] overflow-hidden">
         <Image
           alt={mainText}
           width={1000}

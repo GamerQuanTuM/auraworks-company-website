@@ -50,12 +50,9 @@ const Banner = () => {
   return (
     <div className="bg-black h-screen text-white">
       <div
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full background-image-class"
         style={{
           backgroundImage: `url(${"https://daggle.io/_next/image?url=%2Fpng%2Fhero-section%2Fhero-bg.webp&w=1920&q=100"})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
         }}
       />
       <motion.div

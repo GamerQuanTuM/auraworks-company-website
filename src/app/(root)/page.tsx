@@ -5,6 +5,8 @@ import Testimonial from "./testimonial";
 import Banner from "./banner";
 import OurWorks from "./our-works";
 import Features from "./features";
+import Projects from "./projects";
+import FAQ from "./faq";
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
       <Testimonial/>
       <OurWorks/>
       <Features/>
+      <Projects/>
+      <FAQ/>
     </>
   );
 };

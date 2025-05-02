@@ -10,14 +10,12 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-const Navbar = () => {
+const Navbar = ({ isTransparent = false }: { isTransparent?: boolean }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -62,7 +60,11 @@ const Navbar = () => {
       animate="visible"
       variants={navbarVariants}
       className={`w-full z-[500] fixed top-0 left-0 right-0 backdrop-blur-lg text-white ${
-        scrolled ? "bg-black/70 shadow-lg" : "bg-transparent"
+        scrolled
+          ? "bg-black/70 shadow-lg"
+          : isTransparent
+          ? "bg-transparent"
+          : "bg-black/70 shadow-lg"
       }`}
     >
       <div className="main-container flex items-center justify-between">

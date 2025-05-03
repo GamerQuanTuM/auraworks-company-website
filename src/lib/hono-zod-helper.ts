@@ -1,6 +1,6 @@
 import { ZodTypeAny } from "zod";
 import { zValidator } from "@hono/zod-validator";
-import { ContentfulStatusCode } from "hono/utils/http-status";
+import type { ContentfulStatusCode } from "hono/utils/http-status";
 
 const reqParameters = [
   "query",

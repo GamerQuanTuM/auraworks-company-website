@@ -93,14 +93,14 @@ const Advertise = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex md:flex-row max-w-[328px] tab:max-w-[520px] md:max-w-full mx-auto flex-col items-center justify-center gap-6 mt-16"
+        className="flex md:flex-row max-w-[328px] md:max-w-full mx-auto flex-col items-center justify-center gap-6 mt-16"
       >
         {/* Left Card */}
         <motion.div
           variants={cardVariants}
-          className="flex flex-col relative w-[320px] h-full tab:w-[520px] md:w-[457px] tab:h-[383.5px] md:h-[486px]"
+          className="flex flex-col relative w-[320px] h-full md:w-[457px] md:h-[486px]"
         >
-          <div className="flex flex-col gap-2 bg-gradient-to-b text-center md:text-start items-center md:items-start p-4 md:p-6 text-white rounded-[16px] from-[#6025E1] to-[#35147B] md:w-[361px] w-full md:h-[486px] h-full self-end">
+          <div className="flex flex-col gap-2 bg-gradient-to-b text-center md:text-start items-center md:items-start p-4 md:p-6 text-white rounded-[16px] from-[#6025E1] to-[#35147B] lg:w-[361px] w-full md:h-[486px] h-full self-end">
             <div className="flex flex-col gap-1 mb-6">
               <span className="font-bold text-2xl">커뮤니케이션의 부재</span>
               <span className="text-sm font-semibold mt-2">

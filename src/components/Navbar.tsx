@@ -18,7 +18,6 @@ import {
 const Navbar = ({ isTransparent = false }: { isTransparent?: boolean }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
-  const [openDrawer, setOpenDrawer] = useState(false);
 
   // Detect scroll position to change navbar appearance
   useEffect(() => {

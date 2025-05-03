@@ -131,7 +131,7 @@ const Projects = () => {
         variants={testimonialCardVariants}
         initial="hidden"
         whileInView="show"
-        className="relative mt-20 w-[90%] md:w-[60%] mx-auto overflow-hidden mask-gradient"
+        className="relative mt-20 w-[90%] lg:w-[60%] mx-auto overflow-hidden mask-gradient"
       >
         <div
           className="overflow-hidden"
@@ -153,10 +153,11 @@ const Projects = () => {
       </motion.div>
 
       <div className="pt-10 md:pt-20 flex justify-center">
-        <Button className="hidden md:inline-flex items-center justify-center cursor-pointer transition-colors text-black border bg-white border-gray-400 font-semibold px-7 py-6 rounded-lg hover:bg-gray-100">
+        <Button className="inline-flex items-center justify-center cursor-pointer transition-colors text-black border bg-white border-gray-400 font-semibold px-7 py-6 rounded-lg hover:bg-gray-100">
           포트폴리오 더 보기
         </Button>
       </div>
+      
     </section>
   );
 };

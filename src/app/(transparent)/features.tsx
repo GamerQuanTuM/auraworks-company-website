@@ -106,7 +106,7 @@ const Features = () => {
           </h1>
         </div>
 
-        <div className="mt-10 h-[35rem] w-[80%] mx-auto hidden md:block relative rounded-lg">
+        <div className="mt-10 h-[35rem] sm:w-[80%] md:w-[90%] lg:w-[80%] mx-auto hidden md:block relative rounded-lg">
           {/* Background images for all sections - always present but opacity controlled */}
           {processSteps.map((step) => (
             <div
@@ -195,7 +195,7 @@ const Features = () => {
                     showDescription === step.id ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <p className="text-base px-2 font-medium">{step.desc}</p>
+                  <p className="text-base md:text-sm lg:text-base px-2 font-medium">{step.desc}</p>
                 </div>
               </div>
             ))}

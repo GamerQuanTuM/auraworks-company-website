@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 
 type Project = {
   id: number;
@@ -8,6 +9,7 @@ type Project = {
   description: string;
   imageUrl: string;
   tags: string[];
+  href: string;
 };
 
 type Props = {
@@ -23,6 +25,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fprinttie%2Fprinttie_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/5",
   },
   {
     id: 2,
@@ -31,6 +34,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fhiary%2Fhiary_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/4",
   },
   {
     id: 3,
@@ -39,6 +43,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fg-alpha%2Fg-alpha_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/2",
   },
   {
     id: 4,
@@ -48,6 +53,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fsparta-builders%2Fsparta-builders_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/8",
   },
   {
     id: 5,
@@ -56,6 +62,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fkosta-edu%2Fkosta-edu_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/7",
   },
   {
     id: 6,
@@ -64,6 +71,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fdalcomedu%2Fdalcomedu_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/6",
   },
   {
     id: 7,
@@ -73,6 +81,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Ftax-research%2Ftax-research_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/1",
   },
   {
     id: 8,
@@ -82,6 +91,7 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fcar-image%2Fcar-image_thumbnail.webp%0A&w=1920&q=75",
     tags: ["웹앱", "반응형", "ADMIN"],
+    href: "https://daggle.io/portfolio/3",
   },
   {
     id: 9,
@@ -90,76 +100,79 @@ const projects = [
     imageUrl:
       "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fwisdomhub%2Fwisdomhub_thumbnail.webp%0A&w=1920&q=75",
     tags: ["안드로이드", "iOS"],
+    href: "https://daggle.io/portfolio/9",
   },
 ];
 
 const ProjectCard: FC<Props> = ({ project, index }) => {
   return (
-    <motion.div
-      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full cursor-pointer"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        ease: [0.25, 0.25, 0.25, 0.75],
-      }}
-      whileHover={{ scale: 1.05 }}
-    >
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="p-5 flex flex-col flex-grow">
-        <div className="flex justify-between">
-          <div className="flex-1">
-            <motion.h3
-              className="text-lg md:text-xl font-bold mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-            >
-              {project.title}
-            </motion.h3>
-            <motion.p
-              className="text-gray-600 mb-4 text-sm md:text-base flex-grow"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-            >
-              {project.description}
-            </motion.p>
+    <Link href={project.href}>
+      <motion.div
+        className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          ease: [0.25, 0.25, 0.25, 0.75],
+        }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-5 flex flex-col flex-grow">
+          <div className="flex justify-between">
+            <div className="flex-1">
+              <motion.h3
+                className="text-lg md:text-xl font-bold mb-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              >
+                {project.title}
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 mb-4 text-sm lg:text-base flex-grow"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              >
+                {project.description}
+              </motion.p>
+            </div>
+            <div className="w-[10%]">
+              <motion.div
+                className="sm:w-10 sm:h-10 md:h-8 md:w-8 lg:w-10 lg:h-10 border-[1px] border-gray-200 rounded-full p-2 flex items-center justify-center"
+                whileHover={{ rotate: 45 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ArrowUpRight size={20} />
+              </motion.div>
+            </div>
           </div>
-          <div className="w-[10%]">
-            <motion.div
-              className="w-10 h-10 border-[1px] border-gray-200 rounded-full p-2 flex items-center justify-center"
-              whileHover={{ rotate: 45 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArrowUpRight size={20} />
-            </motion.div>
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {project.tags.map((tag: string, tagIndex: number) => (
+              <motion.span
+                key={tagIndex}
+                className="px-3 py-1 bg-[#e7e1f7] text-[#5221c4] rounded-full text-xs font-medium"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.4 + index * 0.1 + tagIndex * 0.05,
+                }}
+              >
+                {tag}
+              </motion.span>
+            ))}
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {project.tags.map((tag: string, tagIndex: number) => (
-            <motion.span
-              key={tagIndex}
-              className="px-3 py-1 bg-[#e7e1f7] text-[#5221c4] rounded-full text-xs font-medium"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.4 + index * 0.1 + tagIndex * 0.05,
-              }}
-            >
-              {tag}
-            </motion.span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
@@ -186,7 +199,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="flex-1 my-20 md:my-40 w-full px-4 md:px-0 md:w-4/5 lg:w-3/4 mx-auto flex flex-col gap-7 md:gap-16">
+    <div className="flex-1 my-20 md:my-40 w-full px-4 lg:px-0 lg:w-4/5 mx-auto flex flex-col gap-7 md:gap-16">
       <motion.div
         className="flex flex-col justify-center items-center gap-2 md:gap-3 text-center"
         initial="hidden"
@@ -215,7 +228,7 @@ const Portfolio = () => {
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         initial="hidden"
         animate="visible"
         variants={{

@@ -75,7 +75,7 @@ const OurWorks = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.2 }}
-        className="text-2xl md:text-4xl font-bold w-full md:w-[60%]"
+        className="text-2xl md:text-3xl lg:text-4xl font-bold w-full md:w-[60%]"
       >
         <span className="text-[#5d25e1]">높은 수준</span>을 유지하기 위한
         기본적인 자세
@@ -120,8 +120,8 @@ const Card: FC<CardProps> = ({ description, img, title, alt }) => (
       />
     </div>
     <div className="flex flex-col gap-3">
-      <h1 className="font-bold text-xl md:text-2xl">{title}</h1>
-      <p className="text-gray-500 text-sm md:text-base font-medium">
+      <h1 className="font-bold text-xl lg:text-2xl">{title}</h1>
+      <p className="text-gray-500 text-sm lg:text-base font-medium">
         {description}
       </p>
     </div>

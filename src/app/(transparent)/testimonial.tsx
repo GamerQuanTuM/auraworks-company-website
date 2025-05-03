@@ -181,7 +181,7 @@ const Testimonial = () => {
         variants={testimonialCardVariants}
         initial="hidden"
         whileInView="show"
-        className="relative mt-20 w-[90%] md:w-[60%] mx-auto overflow-hidden mask-gradient"
+        className="relative mt-20 w-[90%] lg:w-[60%] mx-auto overflow-hidden mask-gradient"
       >
         <div
           className="overflow-hidden"

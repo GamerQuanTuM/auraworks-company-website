@@ -3,6 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
 import axios from "axios";
+import { username, password } from "@/lib/hono-helpers";
+import { axiosInstance } from "@/lib/axiosInstance";
 
 type Project = {
   id: string;
@@ -94,17 +96,16 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
 
 const Portfolio = async () => {
   let data: any;
+
   try {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`, {
-        cache: "no-store",
-      });
-      const result = await res.json();
-      data = result.data;
-    } catch (error) {
-      console.error("Failed to fetch portfolio data:", error);
-      return null;
-    }
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`, {
+    //   cache: "no-store",
+    // });
+    // const result = await res.json();
+    // data = result.data;
+
+    const { data: res } = await axiosInstance.get("/portfolio");
+    data = res.data;
   } catch (error) {
     console.error("Failed to fetch portfolio data:", error);
     return null;

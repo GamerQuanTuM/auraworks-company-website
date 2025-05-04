@@ -1,7 +1,10 @@
 import { createHonoApp, createHonoHandlers } from "@/lib/hono-handler";
+import { basicHonoAuth } from "@/lib/hono-helpers";
 import { supabase } from "@/lib/supabase";
 
 const app = createHonoApp("/api/portfolio");
+
+app.use("/*", basicHonoAuth);
 
 app.get("/", async (c) => {
   try {

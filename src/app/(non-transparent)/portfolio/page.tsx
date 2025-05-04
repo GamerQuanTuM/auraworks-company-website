@@ -95,11 +95,18 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
 const Portfolio = async () => {
   let data: any;
   try {
-    const { data: res } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/portfolio`
-    );
-    data = res.data;
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`, {
+        cache: "no-store",
+      });
+      const result = await res.json();
+      data = result.data;
+    } catch (error) {
+      console.error("Failed to fetch portfolio data:", error);
+      return null;
+    }
   } catch (error) {
+    console.error("Failed to fetch portfolio data:", error);
     return null;
   }
 

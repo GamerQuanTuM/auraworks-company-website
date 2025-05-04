@@ -4,105 +4,20 @@ import * as motion from "motion/react-client";
 import Link from "next/link";
 
 type Project = {
-  id: number;
+  id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  image_url: string;
   tags: string[];
   href: string;
+  created_at: string;
+  updated_at: string;
 };
 
 type Props = {
   project: Project;
   index: number;
 };
-
-const projects = [
-  {
-    id: 1,
-    title: "프린티",
-    description: "작가와 팬을 잇는 일러스트 출력 플랫폼",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fprinttie%2Fprinttie_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/5",
-  },
-  {
-    id: 2,
-    title: "하이어리",
-    description: "매일 사용하는 건강한 목표 달성 솔루션",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fhiary%2Fhiary_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/4",
-  },
-  {
-    id: 3,
-    title: "G-ALPHA",
-    description: "물류 포워더 및 물류관계자를 위한 예상물류비 비교견적 솔루션",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fg-alpha%2Fg-alpha_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/2",
-  },
-  {
-    id: 4,
-    title: "스파르타빌더스",
-    description:
-      "직계약으로 안전한 외주 개발 문화를 선도하는 프리미엄 외주개발사 매칭 서비스 플랫폼",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fsparta-builders%2Fsparta-builders_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/8",
-  },
-  {
-    id: 5,
-    title: "KOSTA-EDU",
-    description: "한국소프트웨어기술진흥협회의 학습관리 시스템",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fkosta-edu%2Fkosta-edu_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/7",
-  },
-  {
-    id: 6,
-    title: "달콤수학",
-    description: "엄마의 수학을 돕는 엄마표 온라인 수학교육 강의 플랫폼",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fdalcomedu%2Fdalcomedu_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/6",
-  },
-  {
-    id: 7,
-    title: "TAX-RESEARCH",
-    description:
-      "간편하고 빠르게 예상환급금을 알아볼 수 있는 세금환급 경정청구 솔루션",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Ftax-research%2Ftax-research_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/1",
-  },
-  {
-    id: 8,
-    title: "카미지",
-    description:
-      "빅데이터를 기반으로 제공되는 다양한 차량 정보와 함께 자유롭게 소통하는 커뮤니티",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fcar-image%2Fcar-image_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["웹앱", "반응형", "ADMIN"],
-    href: "https://daggle.io/portfolio/3",
-  },
-  {
-    id: 9,
-    title: "WisdomHub",
-    description: "나의 지혜가 자산이 되는 철학 사유 플랫폼",
-    imageUrl:
-      "https://daggle.io/_next/image?url=https%3A%2F%2Fdagglebucket.s3.ap-northeast-2.amazonaws.com%2Fportfolio%2Fwisdomhub%2Fwisdomhub_thumbnail.webp%0A&w=1920&q=75",
-    tags: ["안드로이드", "iOS"],
-    href: "https://daggle.io/portfolio/9",
-  },
-];
 
 const ProjectCard: FC<Props> = ({ project, index }) => {
   return (
@@ -119,7 +34,7 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
       >
         <div className="relative h-48 overflow-hidden">
           <img
-            src={project.imageUrl}
+            src={project.image_url}
             alt={project.title}
             className="w-full h-full object-cover"
           />
@@ -176,7 +91,10 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
   );
 };
 
-const Portfolio = () => {
+const Portfolio = async () => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`);
+  const { data } = await response.json();
+
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -241,7 +159,7 @@ const Portfolio = () => {
           },
         }}
       >
-        {projects.map((project, index) => (
+        {data.map((project: Project, index: number) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </motion.div>

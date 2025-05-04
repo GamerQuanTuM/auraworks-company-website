@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import axios from "axios";
 
 type Project = {
   id: string;
@@ -92,8 +93,15 @@ const ProjectCard: FC<Props> = ({ project, index }) => {
 };
 
 const Portfolio = async () => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`);
-  const { data } = await response.json();
+  let data: any;
+  try {
+    const { data: res } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/portfolio`
+    );
+    data = res.data;
+  } catch (error) {
+    return null;
+  }
 
   // Container animation variants
   const containerVariants = {
@@ -159,7 +167,7 @@ const Portfolio = async () => {
           },
         }}
       >
-        {data.map((project: Project, index: number) => (
+        {data?.map((project: Project, index: number) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </motion.div>

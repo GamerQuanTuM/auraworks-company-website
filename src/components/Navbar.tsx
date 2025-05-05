@@ -38,8 +38,8 @@ const Navbar = ({ isTransparent = false }: { isTransparent?: boolean }) => {
   const navLinks = [
     { href: "/quotation", text: "다글견적소" },
     { href: "/portfolio", text: "포트폴리오" },
-    { href: "/blog/category/interview", text: "성공사례" },
-    { href: "/outsourcing", text: "아웃소싱" },
+    { text: "성공사례" },
+    { text: "아웃소싱" },
   ];
 
   const navbarVariants = {
@@ -92,7 +92,10 @@ const Navbar = ({ isTransparent = false }: { isTransparent?: boolean }) => {
                 whileHover="hover"
                 variants={linkVariants}
               >
-                <Link href={link.href} className="cursor-pointer relative">
+                <Link
+                  href={link.href ?? "#"}
+                  className="cursor-pointer relative"
+                >
                   <h1 className="text-lg font-semibold hover:text-gray-300 transition duration-300">
                     {link.text}
                   </h1>
@@ -147,7 +150,10 @@ const Navbar = ({ isTransparent = false }: { isTransparent?: boolean }) => {
                     whileHover="hover"
                     variants={linkVariants}
                   >
-                    <Link href={link.href} className="cursor-pointer relative">
+                    <Link
+                      href={link.href ?? "#"}
+                      className="cursor-pointer relative"
+                    >
                       <h1 className="text-base font-semibold hover:text-gray-300 transition duration-300">
                         {link.text}
                       </h1>

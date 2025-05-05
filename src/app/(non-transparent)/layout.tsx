@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-[#F9F9F9]">
       <Navbar />
       <div>{children}</div>
       <Footer />

@@ -133,7 +133,7 @@ const Portfolio = async () => {
   };
 
   return (
-    <div className="flex-1 my-20 md:my-40 w-full px-4 lg:px-0 lg:w-4/5 mx-auto flex flex-col gap-7 md:gap-16">
+    <div className="flex-1 py-20 md:py-40 w-full px-4 lg:px-0 lg:w-4/5 mx-auto flex flex-col gap-7 md:gap-16">
       <motion.div
         className="flex flex-col justify-center items-center gap-2 md:gap-3 text-center"
         initial="hidden"
@@ -141,7 +141,7 @@ const Portfolio = async () => {
         variants={containerVariants}
       >
         <motion.p
-          className="text-[#81848e] text-sm md:text-xl font-medium"
+          className="text-[#81848e] text-sm md:text-lg font-medium"
           variants={titleVariants}
         >
           포트폴리오
